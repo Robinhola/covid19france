@@ -11,8 +11,7 @@ const schema = buildSchema(`
   type Query {
     lastUpdated: String
     source: String
-    confirmed: NumbersPerRegion
-    deaths: NumbersPerRegion
+    timeSerie: [CovidDataPoint!]
   }
 
   type NumbersPerRegion {
@@ -22,14 +21,19 @@ const schema = buildSchema(`
     italy: Int
     china: Int
   }
+
+  type CovidDataPoint {
+    date: String!
+    deaths: NumbersPerRegion
+    confirmed: NumbersPerRegion 
+  }
 `);
 
 // The root provides a resolver function for each API endpoint
 const root = {
   source: () => storedData.cases.source,
   lastUpdated: () => storedData.cases.lastUpdated,
-  confirmed: () => storedData.cases.confirmed,
-  deaths: () => storedData.cases.deaths,
+  timeSerie: () => storedData.cases.timeSerie,
 };
 
 const app = express();
