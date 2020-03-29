@@ -1,0 +1,19 @@
+{
+  "cases": {
+    "lastUpdated": "2020-03-29T08:44:52.987Z",
+    "deaths": {
+      "total": 27090,
+      "europe": 18372,
+      "italy": 9136,
+      "china": 3301,
+      "france": 2314
+    },
+    "confirmed": {
+      "total": 591971,
+      "europe": 298461,
+      "italy": 86498,
+      "china": 82213,
+      "france": 37575
+    }
+  }
+}
