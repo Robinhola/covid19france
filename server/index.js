@@ -10,6 +10,7 @@ console.log(storedData);
 const schema = buildSchema(`
   type Query {
     lastUpdated: String
+    source: String
     confirmed: NumbersPerRegion
     deaths: NumbersPerRegion
   }
@@ -25,15 +26,10 @@ const schema = buildSchema(`
 
 // The root provides a resolver function for each API endpoint
 const root = {
-  lastUpdated: () => {
-    return storedData.cases.lastUpdated;
-  },
-  confirmed: () => {
-    return storedData.cases.confirmed;
-  },
-  deaths: () => {
-    return storedData.cases.deaths;
-  },
+  source: () => storedData.cases.source,
+  lastUpdated: () => storedData.cases.lastUpdated,
+  confirmed: () => storedData.cases.confirmed,
+  deaths: () => storedData.cases.deaths,
 };
 
 const app = express();
