@@ -1,4 +1,5 @@
 import React from "react";
+import CovidTag from "./covidtag.js";
 
 function Home(props) {
   return (
@@ -16,6 +17,7 @@ function Home(props) {
           Hello
         </a>
       </header>
+      <CovidTag category="testCategory" value={3} warningLevel={0} />
     </div>
   );
 }
