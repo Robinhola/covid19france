@@ -1,6 +1,6 @@
 import React from "react";
 
-import Paper from "@material-ui/core/paper";
+import Paper from "@material-ui/core/Paper";
 import { makeStyles } from "@material-ui/core/styles";
 
 import red from "@material-ui/core/colors/red";
